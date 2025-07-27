@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment - Dana | OVO | GoPay</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .circle-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-image: url('https://i.ibb.co/yfLSp9g/logo-digital.png'); /* Ganti link gambar */
+      background-size: cover;
+      background-position: center;
+      margin: 20px auto;
+      border: 3px solid white;
+    }
+
+    .pay-box {
+      margin: 15px 0;
+      padding: 12px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+
+    .pay-box p {
+      margin: 5px 0;
+    }
+
+    button {
+      background: #00c853;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00e676;
+    }
+
+    .instructions {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .number {
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Transfer ke Salah Satu Rekening</h2>
+
+  <div class="circle-image"></div>
+
+  <div class="pay-box">
+    <p><strong>Dana</strong></p>
+    <p class="number" id="noDana">085712345678</p>
+    <button onclick="copyText('noDana')">Salin Nomor Dana</button>
+  </div>
+
+  <div class="pay-box">
+    <p><strong>OVO</strong></p>
+    <p class="number" id="noOvo">081234567890</p>
+    <button onclick="copyText('noOvo')">Salin Nomor OVO</button>
+  </div>
+
+  <div class="pay-box">
+    <p><strong>GoPay</strong></p>
+    <p class="number" id="noGopay">089876543210</p>
+    <button onclick="copyText('noGopay')">Salin Nomor GoPay</button>
+  </div>
+
+  <hr>
+
+  <div class="instructions">
+    <p>📸 Setelah transfer, silakan kirim screenshot bukti transfer ke:</p>
+    <p style="font-weight: bold; color: #00e676;">WhatsApp: 082112345678</p>
+  </div>
+</div>
+
+<script>
+  function copyText(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("✅ Nomor berhasil disalin: " + text);
+    });
+  }
+</script>
+
+</body>
+</html>
